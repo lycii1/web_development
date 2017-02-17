@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>view</title>
+	<style>
+	    body{
+		    font-family: arial;
+		    box-sizing: border-box;
+		    opacity: 0.7;
+	}
+	    .layout{
+	    	margin:0 auto;
+	    	width:700px;
+	    } 
+
+		h1{
+			text-align: center;
+			border-bottom: 1px solid #CCCCCC;
+		}
+		.wall{
+			margin-top:60px;
+		}
+		.wall::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.frame{
+			
+			height:184px;
+			width:220px;
+			margin-right:10px;
+			float:left;			
+			margin-top:10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+		
+		}
+
+		img{
+			height:80%;
+		}
+		p{
+			text-align: center;		
+			position:relative;
+			top:-10px;
+		}
+
+	</style>
+
+</head>
+<body>
+<h1 class="layout">风景列表</h1>
+
+<div class="wall layout">
+	<div class="frame">
+	<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+		<p>风景如画</p>
+	</div>
+	<div class="frame">
+	<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+		<p>风景如画</p>
+	</div>
+	<div class="frame">
+	<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+		<p>风景如画</p>
+	</div>
+	<div class="frame">
+	<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+		<p>风景如画</p>
+	</div>
+	<div class="frame">
+	<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+		<p>风景如画</p>
+	</div>
+	<div class="frame">
+	<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+		<p>风景如画</p>
+	</div>
+
+</div>
+	
+</body>
+</html>
