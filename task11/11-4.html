@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    .main{
+	    	
+	    }
+	    .main::after{
+	    	content: "";
+	    	display: block;
+	    	clear:both;
+	    }
+
+		.content{
+			
+			
+			width:100%;
+			float:left;
+		}
+		.aside{
+			background-color: red;
+			width:120px;
+			height:500px;
+            float:left;
+            margin-left: -100%;
+        
+		}
+		.extra{
+			background-color: yellow;
+			width:150px;
+			height:300px;
+			float:left;
+			margin-left: -150px;
+	
+		}
+		.wrap{
+			background-color:blue;
+			margin:0 150px 0 120px;
+			height:600px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+	   
+		<div class="content">
+		<div class="wrap">content</div></div>
+		
+		
+		<div class="aside">aside</div>
+		<div class="extra">extra</div>
+	</div>
+
+</body>
+</html>
