@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>我的项目1</title>
+	<style>
+		body {
+			font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+			background-color: #FFF2E3;
+			margin: 0;
+			padding: 0;
+
+		}
+		.layout {
+			width: 600px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}
+		h1 {
+			text-align: center;
+			color: #87968e;
+			font-size: 38px;
+		}
+		h1::after {
+			content: "一句话项目介绍";
+			display: block;
+			text-align : center;
+			font-weight: normal;
+			font-size : 11px;
+			padding-top: 20px;
+
+		}
+		.project {
+			list-style: none;
+			padding: 10px 0 50px 140px;
+			
+			
+		}
+		.project::before{
+			content:"";
+			display: block;
+			height:100%;
+			clear:all;
+			text-align: center;
+		}
+		.project a {
+
+			display: inline-block;
+			float:left;
+			padding:6px 10px;
+			margin-right: 10px;
+			text-decoration: none;
+			color:#fff;
+			background-color:#72B890; 
+			font-size: 14px;
+			text-align: center;
+		}
+		.project a:hover {
+			opacity: 0.8;
+		}
+	
+		
+		.image{
+			width:600px;
+			display: table-cell;
+			text-align: center;
+			
+		}
+		.bottom span {
+			display: inline-block;
+			background-color: #72B890;
+			padding:4px 8px;
+
+
+		}
+
+	</style>
+</head>
+<body>
+<div class="layout">
+	<h1>我的项目</h1>
+
+	<ul class="project">
+		<li><a href="#">项目1</a></li>
+		<li><a href="#">项目2</a></li>
+		<li><a href="#">项目3</a></li>
+		<li><a href="#">项目4</a></li>
+		<li><a href="#">项目5</a></li>	
+	</ul>
+	<div class="image">
+		<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/65d4aba2-a097-4b24-aaa0-ebbaf7eedab2" alt="">
+	</div class="bottom">
+    <span>查看源码</span><span>使用说明</span>
+    <p>作者: <a id="me" href="#">我</a></p>
+    </div>
+	
+</body>
+</html>
