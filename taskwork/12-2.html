@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>small tip</title>
+ <style>
+  body {
+  background-color:white;
+}
+.box {
+  height: 100px;
+  width: 200px;
+  border: 1px solid #ccc;
+  margin-top: 30px;
+ 
+}
+.box1::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid  #ccc;
+  border-top: 10px solid  #ccc;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 25px;
+  top: 20px;
+  
+}
+
+.box2::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid  red;
+  border-top: 10px solid  red;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(90deg);
+  position: absolute;
+  left: 189px;
+  top: 163px;
+}
+
+.box3::before {
+  content: '';
+  display: block;
+  background-color:white;
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  transform:rotate(45deg); 
+  position: absolute;
+  left: 25px;
+  top: 283px;
+}
+  </style>
+</head>
+  
+<body>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  
+</body>
+</html>
