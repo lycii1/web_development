@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Resume</title>
+	<style>
+		body,h1,h2,h3,div,section,ol,li,ul,p {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			list-style: none;
+		}
+		body {
+			background-color: #ccc;
+			font: 14px/1.6 Arial, sans-serif;
+			text-align: justify;
+
+		}
+		.layout {
+			max-width: 900px;
+			background-color: #fff;
+			margin: 0 auto;
+		}
+		.main, .foot{
+			padding: 0 40px;
+			margin: 0 auto;
+			
+		}
+		.main h2 {
+			border-bottom: 1px solid #ccc;
+			width: 45%;
+			padding-left: 10px;
+			margin-left: -10px;
+		}
+		.parts {
+			
+			padding-left: 100px;
+			border-left: 1px solid #ccc;
+			position: relative;
+		}
+		.education {
+			margin-top: 40px;
+		}
+	
+
+		.education li:nth-child(1)>h3::after {
+			content: "Visual Design Communication";
+			display: block;
+			font-weight: normal;
+			font-size: 14px;
+			color: #ccc;
+			margin-top: 5px;
+		}
+
+		.education li:nth-child(2)>h3::after {
+			content: "Information System";
+			display: block;
+			font-weight: normal;
+			font-size: 14px;
+			color: #ccc;
+			margin-top: 5px;
+
+		}
+
+		.parts span {
+			color: #ccc;
+			font-weight: normal;
+		}
+		.main li {
+			position: relative;
+			margin-top: -5px;
+
+		}
+		.main li::before {
+			content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #000;
+            position: absolute;
+            left: -105px;
+            top: 1px;
+		}
+		h3 {
+			line-height: 1;
+			margin-top: 25px;
+
+		}
+		.main p {
+			margin-top:-5px;
+
+		}
+		.foot {
+			margin-top:40px;
+		}
+		.foot::after {
+			content:'';
+			display:block;
+			clear:both;
+
+		}
+
+		.bottom {
+			float:left;
+		}
+		.activities {
+			width:50%;
+		}
+		.activity {
+			padding-left: 80px;
+
+		}
+		.foot h2{
+			border-bottom: 1px solid #ccc;
+			
+		}
+		.skills {
+			margin-left: 40px;
+			width:45%;
+			
+		}
+		
+
+		</style>
+</head>
+<body>
+<div class="layout">
+	<div class="header">
+		<section class="name"></section>
+		<section class="contacts"></section>
+
+	</div>
+
+	<div class="main">
+		<section class="work detail">
+			<h2>WORK EXPERIENCE</h2>
+			<ol class="parts">
+				<li>
+					<h3>Marketplaces / <span class="year">2011 - 2013</span></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet tempore deleniti dignissimos officiis earum enim natus possimus, error ullam est totam saepe? Mollitia minima provident, eum assumenda aliquid maiores ipsum.</p></li>
+				<li>
+					<h3>Apple Inc. / <span class="year">2013 - 2014</span></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet tempore deleniti dignissimos officiis earum enim natus possimus, error ullam est totam saepe? Mollitia minima provident, eum assumenda aliquid maiores ipsum.</p></li>
+				
+				<li>
+					<h3>Aroma Bar Network / <span class="year">2014 - Now</span></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet tempore deleniti dignissimos officiis earum enim natus possimus, error ullam est totam saepe? Mollitia minima provident, eum assumenda aliquid maiores ipsum.</p></li>
+				</li>
+			</ol>
+		</section>
+		<section class="education detail">
+			<h2>EDUCATION</h2>
+			<ol class="parts">
+				<li>
+					<h3>College / <span class="year">2013 - 2014</span></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet tempore deleniti dignissimos officiis earum enim natus possimus, error ullam est totam saepe? Mollitia minima provident, eum assumenda aliquid maiores ipsum.</p></li>
+				<li>
+					<h3>Ubiversity / <span class="year">2013 - 2014</span></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet tempore deleniti dignissimos officiis earum enim natus possimus, error ullam est totam saepe? Mollitia minima provident, eum assumenda aliquid maiores ipsum.</p></li>
+				</li>
+				
+			</ol>
+		</section>
+	</div>
+
+	<div class="foot">
+		<section class="activities bottom">
+			<h2>EXTRA CURRICULAR ACTIVITIES</h2>
+			<ol class="activity">
+				<li><h3>Volunteer</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta assumenda nesciunt quos ullam sint nisi, suscipit alias eum, tenetur, commodi natus iusto.</p></li>
+				<li><h3>Volunteer</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta assumenda nesciunt quos ullam sint nisi, suscipit alias eum, tenetur, commodi natus iusto.</p></li>
+				
+			</ol>
+		</section>
+
+		<section class="skills bottom">
+			<h2>PROFESIONAL SKILLS</h2>
+			<ol id="skill">
+				<li><h3>HTML &amp;  CSS</h3></li>
+				<li><h3>JAVASCRIPT</h3></li>
+				<li><h3>SLIM</h3></li>
+				<li><h3>JQUERY</h3></li>
+				<li><h3>PHOTOSHOP</h3></li>
+				<li><h3>ILLUSTRATOR</h3></li>
+			</ol>
+		</section>
+	</div>
+
+</div>
+	
+</body>
+</html>
