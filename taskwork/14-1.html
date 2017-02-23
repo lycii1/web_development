@@ -1,98 +1,197 @@
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
 	<title>我的项目1</title>
 	<style>
-		body {
-			font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
-			background-color: #FFF2E3;
-			margin: 0;
-			padding: 0;
+	    * {
+	    	margin: 0;
+	    	padding: 0;	    
+		}
 
-		}
-		.layout {
-			width: 600px;
-			margin: 0 auto;
-			border: 1px solid black;
-		}
-		h1 {
-			text-align: center;
-			color: #87968e;
-			font-size: 38px;
-		}
-		h1::after {
-			content: "一句话项目介绍";
+		body{
+            font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            font-size: 14px;
+            color: #87968e;
+            background: #fff2e3;
+            text-align: center;
+        }
+
+        h1 {
+        	font-size: 42px;
+        	padding-top:20px;
+        	min-width: 600px;
+        }
+
+        h1::after{
+            content: "一句话项目介绍";
+            display:block;
+            font-size:12px;
+            font-weight:normal;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            opacity: 0.7;
+        }
+
+        .project {
+        	margin:0 auto;
+            width:600px;
+        }
+
+        .project::after {
+        	content:"";
+        	display:block;
+        	clear:both;
+        }
+        
+		.demo {
 			display: block;
-			text-align : center;
-			font-weight: normal;
-			font-size : 11px;
-			padding-top: 20px;
-
-		}
-		.project {
-			list-style: none;
-			padding: 10px 0 50px 140px;
-			
-			
-		}
-		.project::before{
-			content:"";
-			display: block;
-			height:100%;
-			clear:all;
-			text-align: center;
-		}
-		.project a {
-
-			display: inline-block;
-			float:left;
-			padding:6px 10px;
-			margin-right: 10px;
-			text-decoration: none;
-			color:#fff;
-			background-color:#72B890; 
-			font-size: 14px;
-			text-align: center;
-		}
-		.project a:hover {
-			opacity: 0.8;
+            clear: both;
+			margin-left:100px;
+			padding-top:40px;
 		}
 	
-		
-		.image{
-			width:600px;
-			display: table-cell;
-			text-align: center;
+		.slides {
+			
+			list-style: none;
+			height:300px;
+			width:400px;
 			
 		}
-		.bottom span {
-			display: inline-block;
-			background-color: #72B890;
-			padding:4px 8px;
+	
+		.slides li {
+			display:none;
+		} 
+
+        input[name="picture"]:nth-child(1):checked ~ .demo li:nth-child(1),
+        input[name="picture"]:nth-child(2):checked ~ .demo li:nth-child(2),
+        input[name="picture"]:nth-child(3):checked ~ .demo li:nth-child(3),
+        input[name="picture"]:nth-child(4):checked ~ .demo li:nth-child(4) {
+        	animation: slide 1s;
+        	display:block;
+        }
+        input[name="picture"]:nth-child(1):checked ~ .labels>li:nth-child(1),
+        input[name="picture"]:nth-child(2):checked ~ .labels>li:nth-child(2),
+        input[name="picture"]:nth-child(3):checked ~ .labels>li:nth-child(3),
+        input[name="picture"]:nth-child(4):checked ~ .labels>li:nth-child(4) {
+        	opacity: 0.7;
+
+        }
+
+        
+        input {
+        	display: none;
+        }
+
+        .labels {
+         	
+        	list-style: none;
+        	margin-left:180px;     	
+        	margin-bottom: 20px;
+        }
+
+        .labels label {
+        	display: inline-block;
+        	padding:4px 8px;
+        	margin-left: 10px;
+        	background-color: #72b890;
+        	color: #fff;       	
+        	float:left;
+        	cursor:pointer;
+        } 
+
+        .labels label:hover {
+        	opacity: 0.7;
+        }
+
+        .bottom {
+        	width:400px;
+        	margin:0 auto;
+        	margin-top: 20px;
+        	list-style: none;
+        }
+
+        .bottom::after{
+        	content:"";
+        	display:block;
+        	clear:both;
+        }
+
+        .bottom>li:nth-child(1) {
+        	margin-left: 115px;
+        }
+
+        .bottom>li a {
+        	display: inline-block;
+        	padding:4px 8px;
+        	margin-left: 10px;
+        	background-color: #72b890;
+        	color: #fff;       	
+        	float:left;
+        	text-decoration: none;
+        }
+
+        .bottom>li a:hover {
+        	opacity: 0.7;
+        }
 
 
-		}
+        footer {
+        	margin-top: 20px;
+        	color:#87968e;
+        }
+
+        footer>span a{
+        	text-decoration: none;
+        	color: #72b890;
+
+        }
+
+
 
 	</style>
+		
 </head>
 <body>
-<div class="layout">
-	<h1>我的项目</h1>
 
-	<ul class="project">
-		<li><a href="#">项目1</a></li>
-		<li><a href="#">项目2</a></li>
-		<li><a href="#">项目3</a></li>
-		<li><a href="#">项目4</a></li>
-		<li><a href="#">项目5</a></li>	
-	</ul>
-	<div class="image">
-		<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/65d4aba2-a097-4b24-aaa0-ebbaf7eedab2" alt="">
-	</div class="bottom">
-    <span>查看源码</span><span>使用说明</span>
-    <p>作者: <a id="me" href="#">我</a></p>
-    </div>
+<h1>我的项目</h1>
+
+<div class=project>
+    <input type="radio" name="picture" id="slide1" checked>
+    <input type="radio" name="picture" id="slide2">
+    <input type="radio" name="picture" id="slide3">
+    <input type="radio" name="picture" id="slide4">
+
+
+    <ol class="labels">
+    	<li><label for="slide1">项目1</label></li>
+    	<li><label for="slide2">项目2</label></li>
+    	<li><label for="slide3">项目3</label></li>
+    	<li><label for="slide4">项目4</label></li>
+    </ol>
+
+	<section class=demo>
+	    <ol class="slides">
+	       <li><img src="http://upload-images.jianshu.io/upload_images/4585153-62727cbf5dc6baea.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+	       <li><img src="http://upload-images.jianshu.io/upload_images/4585153-8533c3f7cb9fc006.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+	       <li><img src="http://upload-images.jianshu.io/upload_images/4585153-7a4008fcc69fb02e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+	       <li><img src="http://upload-images.jianshu.io/upload_images/4585153-24ec452268a0b32b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+		    
+		</ol>
+	</section>
+	<ol class="bottom">
+		<li><a href="#">查看源码</a></li>
+		<li><a href="#">使用说明</a></li>
+	</ol>
+
+	<footer>作者: <span><a href="#">我</a></span></footer>
+
+
+
+
+</div>
+    
 	
 </body>
 </html>
