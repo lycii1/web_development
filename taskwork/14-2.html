@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Resume</title>
+	<title>Resume-demo</title>
 	<style>
 		body,h1,h2,h3,div,section,ol,li,ul,p {
 			margin: 0;
@@ -14,22 +14,89 @@
 			background-color: #ccc;
 			font: 14px/1.6 Arial, sans-serif;
 			text-align: justify;
-
 		}
 		.layout {
 			max-width: 900px;
 			background-color: #fff;
 			margin: 0 auto;
 		}
+		.header {
+			padding-top: 40px;
+			overflow:hidden;
+		}
+		
+		.name {
+			float:left;
+			width:60%;
+			padding-left: 40px;
+			padding-top:13px;
+
+		}
+		.circle {
+			width:100px;
+			height:100px;
+			background-color: #333;
+			border-radius: 50%;
+			position: relative;
+			float:left;
+		}
+		.circle::before {
+			content:"J";
+			color: #fff;
+			font-size:20px;
+			position: absolute;
+			top:20px;
+			left:20px;
+		}
+		.circle::after {
+			content:"T";
+			color: #fff;
+			font-size:20px;
+			position: absolute;
+			bottom:20px;
+			right:20px;
+		}
+		.titlename {
+			float:left;
+			padding-left: 40px;
+			padding-top:20px;
+
+		}
+		h1 {
+			font-weight: normal;
+			font-size:28px;
+		}
+		
+		.line {
+			position: absolute;
+			width:60px;
+			border-bottom: 1px solid #fff;
+			top:50px;
+			left:22px;
+			transform: rotate(-55deg);
+		}
+		.contacts {
+			float:left;
+			width:40%;
+		}
+		.contacts h2 {
+			border-bottom: 5px solid #333;
+		}
+		.contacts p {
+			padding-top: 3px;
+		}
+
+
 		.main, .foot{
 			padding: 0 40px;
+			padding-top:40px;
 			margin: 0 auto;
 			
 		}
 		.main h2 {
 			border-bottom: 1px solid #ccc;
 			width: 45%;
-			padding-left: 10px;
+			
 			margin-left: -10px;
 		}
 		.parts {
@@ -42,7 +109,6 @@
 			margin-top: 40px;
 		}
 	
-
 		.education li:nth-child(1)>h3::after {
 			content: "Visual Design Communication";
 			display: block;
@@ -51,7 +117,6 @@
 			color: #ccc;
 			margin-top: 5px;
 		}
-
 		.education li:nth-child(2)>h3::after {
 			content: "Information System";
 			display: block;
@@ -59,9 +124,10 @@
 			font-size: 14px;
 			color: #ccc;
 			margin-top: 5px;
-
 		}
-
+		.parts p{
+			padding-top:10px;
+		}
 		.parts span {
 			color: #ccc;
 			font-weight: normal;
@@ -69,7 +135,6 @@
 		.main li {
 			position: relative;
 			margin-top: -5px;
-
 		}
 		.main li::before {
 			content: "";
@@ -82,10 +147,9 @@
             left: -105px;
             top: 1px;
 		}
-		h3 {
+		.main h3 {
 			line-height: 1;
 			margin-top: 25px;
-
 		}
 		.main p {
 			margin-top:-5px;
@@ -98,37 +162,107 @@
 			content:'';
 			display:block;
 			clear:both;
-
 		}
-
 		.bottom {
 			float:left;
 		}
 		.activities {
-			width:50%;
+			width:45%;
+
+
 		}
 		.activity {
 			padding-left: 80px;
+			padding-top: 20px;
+		}
+		.activities li {
+			position: relative;
+		}
+		.activities h3::before {
+
+			content:'';
+			display:block;
+			width:19px;
+			height:19px;
+			border:1px solid #333;
+			border-radius: 50%;
+			position:absolute;
+			top:3px;
+			left:-80px;
+		}
+		.activities h3::after {
+			content:'+';
+			display:block;
+			position:absolute;
+			top:0px;
+			left:-74px;
 
 		}
+		
 		.foot h2{
 			border-bottom: 1px solid #ccc;
+
+			margin-left: -10px;
+
 			
 		}
 		.skills {
-			margin-left: 40px;
-			width:45%;
+			margin-left: 10%;
+			width:40%;
 			
 		}
 		
+		.skills h3 {
+			float:right;
+			width:50%;
+			padding-left: 45px;
+			line-height: 3;
+			position:relative;
 
+		}
+		.skills h3::before {
+			content:'';
+			display:block;
+			width:19px;
+			height:19px;
+			border:1px solid #333;
+			border-radius: 100%;
+			position:absolute;
+			top:13px;
+			left:0;
+		}
+		.skills h3::after {
+			content:'+';
+			display:block;
+			position:absolute;
+			top:-1px;
+			left:6px;
+		}
+		#skill {
+			padding-top:20px;
+		}
+		
 		</style>
 </head>
 <body>
 <div class="layout">
 	<div class="header">
-		<section class="name"></section>
-		<section class="contacts"></section>
+		<section class="name">
+			<div class="circle">
+				<div class="line"></div>
+			</div>
+			<div class="titlename">
+			<h1>WANG JIANTAO</h1>
+			<p><strong>Graphic &amp; Web Dsigner</strong></p>
+			</div>
+		</section>
+		<section class="contacts">
+			<h2>CONTACTS</h2>
+			<p><em><strong>A</strong> &nbsp;No.43 Weiguo Road,Foshan,China</em></p>
+			<p><em><strong>M</strong> &nbsp;+86 123 4567 8901</em></p>
+			<p><em><strong>P</strong> &nbsp;wangjiantao85@gmail.com</em></p>
+			<p><em><strong>B</strong> &nbsp;github.com/lycii1</em></p>
+		</section>
 
 	</div>
 
