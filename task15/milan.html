@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Milan</title>
+</head>
+<style>
+	@font-face {font-family: "iconfont";
+ 		 src: url('iconfont.eot?t=1488784728745'); /* IE9*/
+ 		 src: url('iconfont.eot?t=1488784728745#iefix') format('embedded-opentype'), /* IE6-IE8 */
+ 		 url('iconfont.woff?t=1488784728745') format('woff'), /* chrome, firefox */
+		  url('iconfont.ttf?t=1488784728745') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+ 		 url('iconfont.svg?t=1488784728745#iconfont') format('svg'); /* iOS 4.1- */
+	}
+
+	.iconfont {
+ 		 font-family:"iconfont" !important;
+ 		 font-size:30px;
+		 font-style:normal;
+		 -webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
+}
+
+	.icon-facebook:before { content: "\f0004"; }
+
+	.icon-twitter:before { content: "\e683"; }
+
+	.icon-instagram:before { content: "\e7a4"; }
+
+
+	
+
+	body,ul, li, a, p, div,h1,h2,h3 {
+		font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+		box-sizing: border-box;
+	} 
+	p {
+		color:#fff;
+	}
+	h2 {
+		
+		text-align: center;
+	}
+
+	h3 {
+		color:red;
+	}
+	
+	body {
+		background-color: #000;
+	}
+	.layout {
+		max-width: 1000px;
+		margin:0 auto;
+
+
+	}
+	.topbar {
+		height:80px;
+		
+		background-color: #000;
+		width:100%;
+		position: fixed;
+		left:0;
+		right:0;
+		top:0;	
+		z-index: 1
+	}
+	.topbar>.layout {
+		
+		background: url(download.jpg) top right no-repeat;
+		margin-top: -20px;
+		height:84px;
+		
+	}
+	.topbar>.layout:after {
+		content: "";
+		display: block;
+		clear: both;
+		margin-top: -14px;
+
+	}
+	
+	#logo {
+		float:left;
+		overflow:hidden;
+		
+	}
+
+	#logo img{
+		height:84px;
+
+	}
+	#navi {
+		list-style: none;
+	}
+
+	#navi a {
+		display: inline-block;
+		float:right;
+		text-decoration:none;
+		color:#fff;
+		padding-top: 30px;
+		margin-right: 20px;
+		font-size: 15px;
+	}
+	#navi a:hover {
+		color:yellow;
+	}
+	#welcome {
+		margin-top: 80px;
+		background: url(welcome.jpg);
+		height:900px;
+		background-size:cover;
+		background-repeat:no-repeat;
+
+
+	}
+	#welcome p {
+
+		color:white;
+		font-size: 80px;
+		font-weight: bold;
+		position:absolute;
+		top:200px;
+		left:200px;
+		line-height: 0.8;
+	}
+	#history h2{
+		color: red;
+	}
+	#history {
+		margin:0 auto;
+		margin-top: 100px;
+		padding-top: 100px;
+	}
+	#history>p {
+		text-align:center;
+	}
+	
+	#timeline {
+		margin-top: 100px;
+		list-style: none;
+		position: relative;
+
+	}
+	#timeline:after {
+		content:'';
+		display: block;
+		width:2px;
+		top:100px;
+		bottom:100px;
+		background-color: red;
+		position:absolute;
+		left:50%;
+		margin-left: -5.5px;
+		z-index: -1;
+
+	}
+	#timeline>li {	
+		position: relative;
+
+	}
+	#timeline li:after {
+		content: '';
+		display: table;
+		clear:both;
+	}
+
+
+
+	.timeline-circle {
+		position:absolute;
+		width: 200px;
+		height:200px;
+		border-radius: 100%;
+		border:5px solid red;
+		overflow: hidden;
+		left:50%;	
+		margin-left:-127px;
+		top:40px;
+		
+	}
+	.timeline-circle>img {
+		max-width: 200px;
+		max-height: 200px;
+	}
+	.leftcontent {
+		margin-bottom: 50px;
+		position: relative;
+		float:left;
+		text-align: right;
+		width:300px;
+		margin-left: -40px;
+	}
+	.leftcontent>p {
+		text-align:right;
+		color:white;
+	}
+	.leftcontent:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.rightcontent {
+		margin-bottom: 50px;
+		position: relative;
+		float:right;
+		text-align: left;
+		width:300px;
+		margin-left: -20px;
+	}
+	.rightcontent>p {
+		color:white;
+		text-align: left;
+	}
+	.rightcontent:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	#champions {
+		background-color: red;
+		border-top: red 1px solid;
+		margin-top: 50px;
+	}
+	#champions:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	#champions h2 {
+		font-size: 30px;
+		margin-top: 100px;
+
+	}
+
+	.reward>p {
+		text-align: center;
+	}
+	.cup {
+		position: relative;
+
+	}
+	.cup:after {
+		content:"";
+		display:block;
+		clear:both;
+	}
+	.cup>div {
+		position: relative;
+		float:left;
+		width:33.33%;
+	}
+	#player h2 {
+		color:red;
+		text-align: center;
+		margin-top: 100px;
+	}
+
+	.cupimage {
+		margin-left: 100px;
+
+	}
+	.cupimage>img {
+		height:150px;
+	}
+	.cup h3 {
+		color:white;
+		text-align: center;
+	}
+	.cup p {
+		margin-left: 70px;
+		width:211px;
+		
+	}
+	.cup {
+		margin-top: 100px;
+	}
+	#team {
+		display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content:space-between;
+      
+	}
+	.person {
+		width:280px;
+		height:350px;
+		border:2px solid red;
+		margin-top: 20px;
+		position:relative;
+
+	}
+	
+	.person>.photo:after {
+		content: "+";
+   		position: absolute;
+    	background-color: rgba(254,209,54,0.9);
+    	display: inline-block;
+    	padding: 81px 110px;
+    	top: -2px;
+    	right: -1px;
+    	color: #fff;
+    	font-size: 100px;
+    	z-index: -1;
+	}
+	.person img {
+		width:276px;
+		position: absolute;
+
+
+		
+	}
+	.person img:hover{
+		cursor:pointer;
+		opacity: 0.1;
+		
+
+	}
+	.person>h3 {
+		margin-top:294px;
+	}
+
+	.person h3,.person p {
+
+		line-height: 0.5;
+		text-align: center;;
+	}
+	#player>p {
+		text-align: center;
+	}
+	#legend {
+		background-color: red;
+	}
+	#legend h2 {
+		margin-top: 100px;
+		padding-top: 100px;
+	}
+	#legend>.layout>p {
+		text-align: center;
+	}
+	.circleperson {
+		width:200px;
+		height:200px;
+		border-radius:100%;
+		overflow: hidden;
+		border: 5px #fff solid;
+		margin:0 auto;
+
+	}
+	.star {
+		width:33%;
+		float:left;
+		margin-top: 80px;
+	}
+	.circleperson>img {
+		width:200px;
+
+	}
+	#legend h3 {
+		color:white;
+		text-align: center;
+	}
+	.star p {
+		color:#000;
+		font-size: :18px;
+		text-align: center;
+	}
+	#legend .layout:after {
+		content:'';
+		display: block;
+		clear:both;
+
+	}
+	.star a {
+		display: inline-block;
+		text-decoration: none;
+		color:#000;
+		margin-left:10px;
+
+	}
+	.star a:hover{
+		opacity: 0.4;
+	}
+	#sponsor {
+		margin-top: 100px;
+
+	}
+	#sponsor>.layout:after {
+		content:"";
+		display: block;
+		clear:both;
+	}
+	#sponsor a {
+		display: inline-block;
+		float:left;
+		width:25%;
+		text-align: center;
+		margin-bottom: 100px;
+		vertical-align: center;
+	}
+	#funclub {
+		background: url(map.png) red  center;
+		padding-top:100px;
+		padding-bottom: 100px;
+	}
+
+	#funclub>.layout>p {
+		text-align: center;
+	}
+	#funclub>.layout:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	#leftrow {
+		width:50%;
+		float:left;
+	}
+	#leftrow:after {
+		content: "";
+
+	}
+	#funclub input[type="text"] {
+		display: block;
+		height:40px;
+		margin-top:20px;
+		width:100%;
+		border-radius: 5px;
+		float:left;
+		font-size: 20px;
+
+
+	}
+	#send {
+		text-align: center;
+		margin-top: 20px;
+	}
+	#funclub input[type="submit"]{
+
+		height:60px;
+		border-radius: 5px;
+		width:200px;
+		background-color: #000;
+		color:#fff;
+		font-size: 20px;
+		border:none;
+		cursor: pointer;
+
+	}
+	#funclub input[type="submit"]:hover {
+		opacity: 0.6;
+	}
+	#rightrow {
+		width:50%;
+		float:left;
+		padding-left: 20px;
+		margin-top: 20px;
+
+	}
+	#funclub textarea {
+		height:176px;
+		width:100%;
+		border-radius: 5px;
+		font-size: 20px;
+		resize:none;
+
+	}
+	#table {
+		width:100%;
+	}
+	#table:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+	footer>.layout {
+		margin-top: 30px;
+	}
+	#copyright {
+		width: 33.33%;
+		float:left;
+		margin-top: 9px;
+		text-align: center;
+
+	}
+	footer ul {
+		list-style: none;
+		width:33.33%;
+		float:left;
+		padding-left:126px;
+		padding-right: auto;
+	}
+
+	footer ul>li>a {
+		display: inline-block;
+		color:white;
+		text-decoration:none;
+		float:left;
+		margin:0 5px;
+
+	}
+
+	#userauthority {
+		width:33.33%;
+		float:left;
+		margin-top:21px;
+		text-align:center;
+	}
+
+	#userauthority>a {
+		display: inline-block;
+		margin-left: 10px;
+		color:white;
+		text-decoration: none;
+	}
+	footer a:hover {
+		color:red;
+	}
+	#userauthority>a:hover {
+		color: red;
+	}
+
+
+
+</style>
+<body>
+	<div class="topbar" >
+		<div class="layout">
+			<div id="logo"><img src="logo.png" alt=""></div>
+
+			<ul id="navi">
+				<li><a href="#fanclub">球迷地带</a></li>
+				<li><a href="#legend">传奇永恒</a></li>
+				<li><a href="#palyer">球员介绍</a></li>
+				<li><a href="#champions">无上荣誉</a></li>
+				<li><a href="#history">光辉历史</a></li>
+			</ul>
+		</div>	
+	</div>
+
+	<div id="welcome" >
+		<p>#we</br>are</br>ac</br>milan</p>
+	</div>
+
+	<div id="history" class="layout">
+		<h2>GLORY HISTORY</h2>
+		<p>百年荣耀</p>
+		<ul id="timeline">
+			<li id="time1">
+				<div class="leftcontent">
+					
+						<h3>2009-2011</h3>
+						<h3>Our Humble Beginnings</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+					
+				</div>
+				<div class="timeline-circle">
+					<img src="history1.jpg" alt="">
+				</div>
+			</li>
+			<li id="time2">
+				<div class="rightcontent">
+					<h3>2009-2011</h3>
+					<h3>Our Humble Beginnings</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+				</div>
+				<div class="timeline-circle">
+					<img src="history1.jpg" alt="">
+				</div>
+			</li>
+			<li id="time3">
+				<div class="leftcontent">
+					<h3>2009-2011</h3>
+					<h3>Our Humble Beginnings</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+				</div>
+				<div class="timeline-circle">
+					<img src="history1.jpg" alt="">
+				</div>
+			</li>
+			<li id="time4">
+				<div class="rightcontent">
+					<h3>2009-2011</h3>
+					<h3>Our Humble Beginnings</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+				</div>
+				<div class="timeline-circle">
+					<img src="history1.jpg" alt="">
+				</div>
+			</li>
+			<li id="time5">
+				<div class="leftcontent">
+					<h3>2009-2011</h3>
+					<h3>Our Humble Beginnings</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+				</div>
+				<div class="timeline-circle">
+					<img src="history1.jpg" alt="">
+				</div>
+			</li>
+			
+		</ul>
+
+
+
+	</div>
+
+	<div id="champions">
+		<div class="reward layout">
+			<h2>WE ARE CHAMPIONS!</h2>
+			<p>我们是一百年来,欧洲最成功的俱乐部之一!</p>
+			<div class="cup">
+				<div id="euro">
+					<div class="cupimage">
+						<img src="eurochampion.png" alt="">
+					</div>
+					<h3>欧洲冠军联赛冠军:7次</h3>
+					<p>1962-63年,1968-69年,1988-89年,1989-90年,1993-94年,2002-03年,2006-07年</p>
+				</div>
+				<div id="italy">
+					<div class="cupimage">
+						<img src="TIM.png" alt="">
+					</div>
+					<h3>意甲联赛冠军:18次</h3>
+					<p>1901年, 1906年, 1907年, 1950-51年, 1954-55年, 1956-57年,1958-59年, 1961-62年, 1967-68年, 1978-79年, 1987-88年,1991-92年, 1992-93年, 1993-94年, 1995-96年, 1998-99年,2003-04年, 2010-11年</p>
+				</div>
+				<div id="fifa">
+					<div class="cupimage">
+						<img src="fifa.png" alt="">
+					</div>
+					<h3>世界俱乐部杯冠军:4次</h3>
+					<p>1969年,1989年,1990年,2007年</p>
+				</div>
+				
+			</div>
+			
+		</div>
+		</div>
+	</div>
+
+	<div id="player" class="layout">
+		<h2>MILAN FAMILY</h2>
+		<p>如今的AC米兰,已经刮起了一阵青春风暴!</p>
+		<div id="team">
+			<div class="person">
+				<div class="photo">
+					<img src="mentella.jpg" alt="">
+				</div>
+				<h3>主教练</h3>
+				<p>蒙特拉</p>
+			</div>	
+			<div class="person">
+				<div class="photo">
+					<img src="Montolivo.jpg" alt="">
+				</div>
+				<h3>队长</h3>
+				<p>蒙特利沃</p>
+			</div>
+			<div class="person">
+				<div class="photo">
+					<img src="Donnarumma.jpg" alt="">
+				</div>
+				<h3>守门员</h3>
+				<p>唐纳鲁玛</p>
+			</div><div class="person">
+				<div class="photo">
+					<img src="mentella.jpg" alt="">
+				</div>
+				<h3>主教练</h3>
+				<p>蒙特拉</p>
+			</div>	
+			<div class="person">
+				<div class="photo">
+					<img src="Montolivo.jpg" alt="">
+				</div>
+				<h3>队长</h3>
+				<p>蒙特利沃</p>
+			</div>
+			<div class="person">
+				<div class="photo">
+					<img src="Donnarumma.jpg" alt="">
+				</div>
+				<h3>守门员</h3>
+				<p>唐纳鲁玛</p>
+			</div>
+			<div class="person">
+				<div class="photo">
+					<img src="mentella.jpg" alt="">
+				</div>
+				<h3>主教练</h3>
+				<p>蒙特拉</p>
+			</div>	
+			<div class="person">
+				<div class="photo">
+					<img src="Montolivo.jpg" alt="">
+				</div>
+				<h3>队长</h3>
+				<p>蒙特利沃</p>
+			</div>
+			<div class="person">
+				<div class="photo">
+					<img src="Donnarumma.jpg" alt="">
+				</div>
+				<h3>守门员</h3>
+				<p>唐纳鲁玛</p>
+				
+			</div>
+		</div>
+
+		
+	</div>
+	
+	<div id="legend">
+		<div class="layout">
+			<h2>SUPER STAR</h2>
+			<p>历史上的米兰星光璀璨</p>
+			<div class="star">
+				<div class="circleperson">
+					<img src="maldini.jpg" alt="">	
+				</div>
+				<h3>红黑传奇</h3>
+				<p><strong>马尔蒂尼</strong></p>
+				<p id="socialwork"><a href="#"><i class="iconfont icon-facebook"></i></a>
+				<a href="#"><i class="iconfont icon-twitter"></i></a>
+				<a href="#"><i class="iconfont icon-instagram"></i></a>
+				</p>
+			</div>
+			<div class="star">
+				<div class="circleperson">
+					<img src="maldini.jpg" alt="">	
+				</div>
+				<h3>红黑传奇</h3>
+				<p><strong>马尔蒂尼</strong></p>
+				<p id="socialwork"><a href="#"><i class="iconfont icon-facebook"></i></a>
+				<a href="#"><i class="iconfont icon-twitter"></i></a>
+				<a href="#"><i class="iconfont icon-instagram"></i></a>
+				</p>
+			</div>
+			<div class="star">
+				<div class="circleperson">
+					<img src="maldini.jpg" alt="">	
+				</div>
+				<h3>红黑传奇</h3>
+				<p><strong>马尔蒂尼</strong></p>
+				<p id="socialwork"><a href="#"><i class="iconfont icon-facebook"></i></a>
+				<a href="#"><i class="iconfont icon-twitter"></i></a>
+				<a href="#"><i class="iconfont icon-instagram"></i></a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div id='sponsor'>
+		<div class="layout">
+			<a href="#"><img src="sponsor1.png" alt=""></a>
+			<a href="#"><img src="sponsor16.png" alt=""></a>
+			<a href="#"><img src="sponsor7.png" alt=""></a>
+			<a href="#"><img src="sponsor3.png" alt=""></a>
+		</div>
+	</div>
+
+	<div id="funclub">
+		<div class="layout">
+			<h2>MILAN FAN CLUB</h2>
+			<p>填写下表,我们会与你联系!</p>
+			<form action="#" method="post" name="funclub">
+				<div id="table">
+					<div id="leftrow">
+						<input type="text" placeholder="YOUR NAME*" name="name">
+						<input type="text" placeholder="YOUR EMAIL*" name="email">
+						<input type="text" placeholder="YOUR PHONE*" name="phone">
+					</div>
+					<div id="rightrow">
+						<textarea placeholder="YOUR MESSAGE*" rows="4" name="message"></textarea>	
+					</div>
+				</div>
+				<div id="send">
+				<input type="submit" value="SEND MESSAGE">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<footer>
+		<div class="layout">
+			<div id="copyright">
+				<p>Copyright © acmilan.com 2017</p>
+			</div>
+			<div id="conduct">
+				<ul> 
+					<li><a href="#"><i class="iconfont icon-facebook"></i></a> </li>   
+					<li><a href="#"><i class="iconfont icon-twitter"></i></a> </li>
+					<li><a href="#"><i class="iconfont icon-instagram"></i></a> </li> 
+				</ul>
+			</div>
+			<div id="userauthority">
+				<a href="#">Privacy Policy</a> 
+			    <a href="#">Terms of Use</a>
+			</div>
+
+		</div>
+	</footer>
+</body>
+</html>
